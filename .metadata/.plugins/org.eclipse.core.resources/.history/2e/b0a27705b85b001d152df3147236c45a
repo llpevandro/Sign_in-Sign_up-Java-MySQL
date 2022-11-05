@@ -1,0 +1,68 @@
+package Cadastro;
+
+public class UsersInfo {
+
+	 private String email, password, username, subject, credentials;
+	 
+	    private int contact;
+
+	    public String getEmail() {
+	        return email;
+	    }
+
+	    public void newEmail (String email) {
+	        this.email = email;
+	    }
+
+	    public String getPassword() {
+	        return password;
+	    }
+
+	    public void newPassword(String password) {
+	        this.password = password;
+	    }
+
+	    public String getUsername() {
+	        return username;
+	    }
+
+	    public void newUsername (String username) {
+	        this.username = username;
+	    }
+
+	    public String getSubject (){
+	        return subject;
+	    }
+
+	    public void newSubject (String subject){
+	        this.subject = subject;
+	    }
+
+	    public String getCredentials() {
+	        return credentials;
+	    }
+
+	    public void newCredentials(String credentials){
+	        this.credentials = credentials;
+	    }
+
+	    public int getContact() {
+	        return contact;
+	    }
+
+	    public void newContact (int contact){
+	        this.contact = contact;
+	    }
+
+	    public UsersInfo(String email, String password, String username, String subject, String credentials){
+	        this.email = email;
+	        this.password = password;
+	        this.username = username;
+	        this.subject = subject;
+	        this.credentials = credentials;
+	    }
+
+	    public UsersInfo(int contact){
+	        this.contact = contact;
+	    }
+}

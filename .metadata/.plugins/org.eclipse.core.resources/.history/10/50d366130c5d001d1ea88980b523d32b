@@ -1,0 +1,87 @@
+package View;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import java.awt.FlowLayout;
+import java.awt.Label;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import javax.swing.JToggleButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class TelaLogin extends JFrame {
+
+	
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaLogin frame = new TelaLogin();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TelaLogin() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Usuario");
+		lblNewLabel.setBounds(30, 30, 46, 14);
+		contentPane.add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(30, 55, 172, 20);
+		textField.setHorizontalAlignment(SwingConstants.LEFT);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		Label label = new Label("Senha");
+		label.setBounds(30, 81, 62, 22);
+		contentPane.add(label);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(30, 109, 172, 20);
+		contentPane.add(passwordField);
+		
+		JToggleButton tglbtnNewToggleButton = new JToggleButton("Entrar");
+		tglbtnNewToggleButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaSucessoLogin telaSucesso = new TelaSucessoLogin();
+				telaSucesso.setVisible(true);
+			}
+		});
+		tglbtnNewToggleButton.setBounds(30, 140, 121, 23);
+		contentPane.add(tglbtnNewToggleButton);
+		
+		JToggleButton tglbtnNewToggleButton_1 = new JToggleButton("Cadastrar");
+		tglbtnNewToggleButton_1.setBounds(30, 174, 121, 23);
+		contentPane.add(tglbtnNewToggleButton_1);
+	}
+}

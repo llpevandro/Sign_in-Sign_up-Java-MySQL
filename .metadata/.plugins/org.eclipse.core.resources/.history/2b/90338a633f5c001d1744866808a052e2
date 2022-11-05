@@ -1,0 +1,25 @@
+package DAO;
+
+import java.sql.Connection;
+
+public class Conexao {
+	
+	public static Connection conectaDB() {
+		
+		Connection conexao = null; {
+			
+			try {
+				
+				
+				
+			}
+			
+			catch (Exception e) {
+				e.getMessage();
+			}
+		}
+		return conexao;
+		
+	}
+
+}

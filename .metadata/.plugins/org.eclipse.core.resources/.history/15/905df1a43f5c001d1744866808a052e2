@@ -1,0 +1,26 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Conexao {
+	
+	public static Connection conectaDB() {
+		
+		Connection conexao = null; {
+			
+			try {
+				
+				String url = "jdbc:mysql://localhost/oliveiratrade?user=developer&password=12345678";
+				conexao = DriverManager.getConnection(url);
+			}
+			
+			catch (Exception e) {
+				e.getMessage();
+			}
+		}
+		return conexao;
+		
+	}
+
+}

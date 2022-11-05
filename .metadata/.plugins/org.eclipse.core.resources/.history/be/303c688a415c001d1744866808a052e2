@@ -1,0 +1,30 @@
+package Cadastro;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import DAO.Conexao;
+
+public class application {
+
+	public void testeCadastro () throws SQLException {
+		
+		try {
+		Connection conexao = new Conexao().conectaDB();
+		
+		String sql = "insert into usuario(usuario, senha) values ('TestandoConnJava', '111222333')";
+		
+		PreparedStatement statement = conexao.prepareStatement(sql);
+		statement.execute();
+		
+		conexao.close();
+		
+		}
+		
+		catch (SQLException e) {
+			e.getMessage();
+			
+		}
+	}
+
+}

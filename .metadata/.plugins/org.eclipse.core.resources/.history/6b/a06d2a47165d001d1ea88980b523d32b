@@ -1,0 +1,109 @@
+package View;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.border.EmptyBorder;
+
+import DAO.Conexao;
+import DAO.UsuarioDAO;
+import models.Usuario;
+
+import javax.swing.JButton;
+
+public class TelaCadastro extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField_usuario;
+	private JTextField textField_email;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaCadastro frame = new TelaCadastro();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TelaCadastro() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		textField_email = new JTextField();
+		textField_email.setBounds(10, 108, 200, 20);
+		contentPane.add(textField_email);
+		textField_email.setColumns(10);
+		
+		textField_usuario = new JTextField();
+		textField_usuario.setBounds(10, 36, 200, 20);
+		contentPane.add(textField_usuario);
+		textField_usuario.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Usuario");
+		lblNewLabel.setBounds(10, 11, 46, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("E-mail");
+		lblNewLabel_1.setBounds(10, 83, 46, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Senha");
+		lblNewLabel_2.setBounds(10, 147, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(10, 172, 200, 20);
+		contentPane.add(passwordField);
+		
+		JButton btnNewButton = new JButton("Salvar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String usuario = textField_usuario.getText();
+				String email = textField_email.getText();
+				char[] senha = passwordField.getPassword();
+				
+				Usuario usuario1 = new Usuario(usuario, email, [senha]);
+				
+				try {
+					
+					Connection conexao = new Conexao().conectaDB();
+					UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
+					usuarioDao.insert(usuario1);
+				}
+				catch (SQLException e1) {
+					e1.getMessage();
+				}
+			}
+		});
+		btnNewButton.setBounds(10, 203, 89, 23);
+		contentPane.add(btnNewButton);
+	}
+}

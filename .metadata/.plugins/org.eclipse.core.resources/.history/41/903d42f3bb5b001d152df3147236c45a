@@ -1,0 +1,49 @@
+package Cadastro;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class application {
+
+	public static void main(String[] args) {
+		
+		ArrayList<UsersInfo> users = new ArrayList<UsersInfo>(); 
+        Scanner sc = new Scanner(System.in); 
+
+      
+        String senha;
+		String nome;
+        int phone;
+        
+		UsersInfo usuario = new UsersInfo();
+        
+        
+        int telefone;
+
+       
+        System.out.println("Selecione o que deseja fazer:  ");
+        System.out.println("1) Cadastro" + "\n" + "2) Login");
+        int choice = sc.nextInt();
+
+        switch(choice) {
+            case 1:
+                System.out.println(" ============ Cadastro ============ ");
+                System.out.print("Email: ");
+                sc.nextLine();
+                String email = sc.nextLine();
+                usuario.setEmail(email);
+                System.out.print("Nome: ");
+                
+                break;
+
+            case 2:
+                System.out.println("Login");
+                //arrays goes here
+                break;
+
+            default:
+                System.out.println("Please pick your account type");
+        }
+
+	}
+
+}

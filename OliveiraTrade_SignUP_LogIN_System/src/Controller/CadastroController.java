@@ -1,0 +1,47 @@
+package Controller;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import DAO.Conexao;
+import DAO.UsuarioDAO;
+import View.TelaCadastro;
+import models.Usuario;
+
+public class CadastroController {
+	
+	private TelaCadastro view;
+
+	public CadastroController(TelaCadastro view) {
+		this.view = view;
+	}
+	
+	
+	public void salvaUsuario() {
+		
+		
+		view.getTextField_email().getText();
+		
+		String usuario = view.getTextField_usuario().getText();
+		String email = view.getTextField_email().getText();
+		String senha = view.getPasswordField().getText();
+		
+		Usuario usuario1 = new Usuario(usuario, email, senha);
+		
+		try {
+			
+			Connection conexao = new Conexao().conectaDB();
+			UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
+			usuarioDao.insert(usuario1);
+			
+			JOptionPane.showMessageDialog(null, "Usuário salvo com sucesso!");
+		}
+		catch (SQLException e1) {
+			e1.getMessage();
+		}
+	}
+	
+
+}

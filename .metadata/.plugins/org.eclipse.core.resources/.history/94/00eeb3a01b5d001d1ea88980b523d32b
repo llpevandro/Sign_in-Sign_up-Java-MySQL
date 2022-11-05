@@ -1,0 +1,19 @@
+package Controller;
+
+import View.TelaSucessoLogin;
+
+public class LoginController {	
+	private TelaSucessoLogin view;
+
+	public LoginController(TelaSucessoLogin view) {		
+		this.view = view;
+	}
+
+	public void autenticar() {
+		
+		TelaSucessoLogin telaSucesso = new TelaSucessoLogin();
+		telaSucesso.setVisible(true);
+		
+	}
+	
+}

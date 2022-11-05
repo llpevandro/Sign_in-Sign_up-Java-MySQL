@@ -1,0 +1,68 @@
+package Cadastro;
+
+public class UsersInfo {
+
+	 private String email, senha, username;
+	 private int phone;
+	 
+	
+
+	    public String getEmail() {
+	        return email;
+	    }	    
+
+	    public String getSenha() {
+			return senha;
+		}
+
+
+
+		public void setPassword(String senha) {
+			if (senha.length() < 8) {
+				throw new IllegalArgumentException("Senha inválida. Mínimo de 8 caracteres");
+			}
+			else {
+				this.senha = senha;
+			}
+		}
+
+
+
+		public String getUsername() {
+			return username;
+		}
+
+
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+
+
+		public int getPhone() {
+			return phone;
+		}
+
+
+
+		public void setPhone(int phone) {
+			this.phone = phone;
+		}
+
+
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+
+
+		public UsersInfo(String email, String username, String senha){
+	        this.email = email;
+	        this.senha = senha;
+	        this.username = username;
+	        
+	    }
+
+	}

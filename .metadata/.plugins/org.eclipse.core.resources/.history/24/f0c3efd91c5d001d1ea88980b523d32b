@@ -1,0 +1,31 @@
+package Controller;
+
+import View.TelaLogin;
+import View.TelaSucessoLogin;
+
+public class LoginController {	
+	private TelaLogin view;
+
+	public LoginController(TelaLogin view) {		
+		this.view = view;
+	}
+
+	public void autenticar() {
+		
+		
+		//Buscando usuario 
+		
+		String usuario = view.getTextField_usuariologin().getText();
+		String senha = view.getPasswordField_login().getText();
+		
+		//Verificando se existe no banco de dados
+		
+		
+		
+		//Se existir usuário, direciona para tela de Sucesso!
+		TelaSucessoLogin telaSucesso = new TelaSucessoLogin();
+		telaSucesso.setVisible(true);
+		
+	}
+	
+}

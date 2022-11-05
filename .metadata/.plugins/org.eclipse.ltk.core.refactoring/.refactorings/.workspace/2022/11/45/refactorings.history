@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;OliveiraTrade_LoginSystem&apos; to &apos;OliveiraTrade_SignUP_LogIN_System&apos;" description="Rename resource &apos;OliveiraTrade_LoginSystem&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/OliveiraTrade_LoginSystem" name="OliveiraTrade_SignUP_LogIN_System" stamp="1667503709084" updateReferences="true"/>
+</session>

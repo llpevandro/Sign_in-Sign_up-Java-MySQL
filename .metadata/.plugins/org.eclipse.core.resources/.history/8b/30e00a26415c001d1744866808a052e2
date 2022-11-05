@@ -1,0 +1,10 @@
+package Cadastro;
+import java.sql.Connection;
+
+public class application {
+
+	public void testeCadastro () {
+		Connection conexao = new Connection().conectaDB(); 
+	}
+
+}

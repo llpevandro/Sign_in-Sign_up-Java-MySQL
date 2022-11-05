@@ -1,0 +1,15 @@
+package Controller;
+
+import View.TelaSucessoLogin;
+
+public class FormLoginController {
+	
+	private TelaSucessoLogin view;
+
+	public FormLoginController(TelaSucessoLogin view) {		
+		this.view = view;
+	}
+
+	
+	
+}

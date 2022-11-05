@@ -1,0 +1,20 @@
+package Conect;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Conexao {
+	
+	public static Connection connect() {
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			return DriverManager.getConnection("jdbc:mysql://localhost/oliveiratrade", "developer", "12345678");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}
